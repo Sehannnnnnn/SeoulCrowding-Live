@@ -1,4 +1,4 @@
-const SEOUL_PLACE_LIST = [
+export const SEOUL_PLACE_LIST = [
     {
         id : 1,
         name : "강남 MICE 관강특구"
@@ -200,5 +200,3 @@ const SEOUL_PLACE_LIST = [
         name : "잠실한강공원"
     }
 ];
-
-export default SEOUL_PLACE_LIST;
