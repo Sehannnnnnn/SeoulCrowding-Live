@@ -1,8 +1,11 @@
 import express from 'express';
 import cors from 'cors';
+import { spawn } from 'child_process';
 
 import placeRouter from './router/placeRouter.js';
 import liveInfoRouter from './router/liveInfoRouter.js';
+import { fetchLiveData } from './service/fetchLiveData.js';
+
 
 const app = express();
 const port = 8000;
@@ -36,3 +39,13 @@ app.use((req, res, next) => {
   app.listen(port, () => {
     console.log(`server runs successfully on port ${port}!`);
 })
+
+var process = spawn("node", ["server/fetchserver.js"]);
+
+process.stdout.on("data", function (data) {
+  console.log(data);
+})
+
+process.stderr.on("data", function (data) {
+  console.error(data.toString());
+});

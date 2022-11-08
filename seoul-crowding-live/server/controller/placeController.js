@@ -4,4 +4,6 @@ const listupAll = (req, res) => {
     res.status(200).send(SEOUL_PLACE_LIST);
 }
 
+
+
 export { listupAll }
